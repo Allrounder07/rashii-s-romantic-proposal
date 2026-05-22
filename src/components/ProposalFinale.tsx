@@ -1,28 +1,34 @@
 import { useEffect, useState } from "react";
 import { Heart, Sparkles as SparklesIcon } from "lucide-react";
 
-function Confetti() {
-  const pieces = Array.from({ length: 80 }, (_, i) => ({
-    id: i,
-    left: Math.random() * 100,
-    delay: Math.random() * 2,
-    duration: 3 + Math.random() * 3,
-    color: ["#ff3d6e", "#ffc857", "#ff8fb1", "#c084fc"][i % 4],
-    size: 6 + Math.random() * 8,
-  }));
+function FallingHearts() {
+  const [pieces, setPieces] = useState<Array<{id:number;left:number;delay:number;duration:number;size:number;color:string}>>([]);
+  useEffect(() => {
+    setPieces(
+      Array.from({ length: 60 }, (_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        delay: Math.random() * 2.5,
+        duration: 3 + Math.random() * 4,
+        size: 10 + Math.random() * 14,
+        color: ["#ff3d6e", "#ff8fb1", "#ffc857", "#ffffff"][i % 4],
+      })),
+    );
+  }, []);
   return (
-    <div className="pointer-events-none fixed inset-0 z-[60] overflow-hidden">
+    <div className="pointer-events-none absolute inset-0 z-[60] overflow-hidden">
       {pieces.map((p) => (
-        <span
+        <Heart
           key={p.id}
-          className="absolute -top-4 rounded-sm"
+          className="absolute -top-6"
+          fill={p.color}
+          color={p.color}
           style={{
             left: `${p.left}%`,
             width: p.size,
             height: p.size,
-            background: p.color,
             animation: `float-heart ${p.duration}s linear ${p.delay}s forwards`,
-            transform: "translateY(-20px)",
+            filter: `drop-shadow(0 0 6px ${p.color})`,
           }}
         />
       ))}
@@ -51,7 +57,7 @@ export function ProposalFinale() {
 
   return (
     <div className="relative mx-auto max-w-3xl text-center">
-      {accepted && <Confetti />}
+      {accepted && <FallingHearts />}
       <div className="mb-6 flex justify-center">
         <Heart className="h-14 w-14 animate-heartbeat fill-rose text-rose drop-shadow-[0_0_30px_oklch(0.72_0.18_5/0.8)]" />
       </div>

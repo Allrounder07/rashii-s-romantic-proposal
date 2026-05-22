@@ -76,24 +76,13 @@ function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
         </div>
-        {/* Giant background heart with the names inside */}
+        {/* Giant background heart */}
         <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-          <div className="relative animate-heartbeat">
-            <Heart
-              className="h-[78vmin] w-[78vmin] fill-rose/15 text-rose/30"
-              style={{ filter: "drop-shadow(0 0 60px oklch(0.72 0.18 5 / 0.45))" }}
-              strokeWidth={1}
-            />
-            <div className="absolute inset-0 flex flex-col items-center justify-center pt-[8%] text-center">
-              <span className="font-script text-[7vmin] leading-none text-blush/80 text-glow">
-                Rashii Ammu
-              </span>
-              <span className="my-1 font-serif-display text-[3vmin] italic text-gold/80">&amp;</span>
-              <span className="font-script text-[7vmin] leading-none text-gold/80 text-glow-gold">
-                Nithin
-              </span>
-            </div>
-          </div>
+          <Heart
+            className="h-[95vmin] w-[95vmin] fill-rose/15 text-rose/30"
+            style={{ filter: "drop-shadow(0 0 80px oklch(0.72 0.18 5 / 0.55))" }}
+            strokeWidth={1}
+          />
         </div>
         <Sparkles count={40} />
 
