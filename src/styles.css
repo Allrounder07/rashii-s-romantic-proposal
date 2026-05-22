@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -59,29 +60,41 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-script: 'Great Vibes', cursive;
+  --font-display: 'Dancing Script', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+  --color-rose: var(--rose);
+  --color-blush: var(--blush);
+  --color-gold: var(--gold);
+  --color-plum: var(--plum);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: oklch(0.16 0.04 340);
+  --foreground: oklch(0.97 0.02 340);
+  --rose: oklch(0.72 0.18 5);
+  --blush: oklch(0.85 0.08 350);
+  --gold: oklch(0.82 0.13 85);
+  --plum: oklch(0.35 0.12 330);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.72 0.18 5);
+  --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.25 0.06 340);
+  --muted-foreground: oklch(0.78 0.05 340);
+  --accent: oklch(0.82 0.13 85);
+  --accent-foreground: oklch(0.2 0.05 340);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
+  --border: oklch(0.4 0.1 340 / 40%);
   --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --ring: oklch(0.72 0.18 5);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -138,7 +151,94 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background: radial-gradient(ellipse at top, oklch(0.22 0.08 340) 0%, oklch(0.12 0.04 330) 60%, oklch(0.08 0.03 320) 100%);
+    background-attachment: fixed;
     color: var(--color-foreground);
+    font-family: var(--font-serif);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-script { font-family: var(--font-script); }
+  .font-display { font-family: var(--font-display); }
+  .font-serif-display { font-family: var(--font-serif); }
+
+  .text-gradient-romance {
+    background: linear-gradient(135deg, oklch(0.85 0.12 5), oklch(0.82 0.13 85), oklch(0.78 0.15 340));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-glow {
+    text-shadow: 0 0 20px oklch(0.72 0.18 5 / 0.6), 0 0 40px oklch(0.72 0.18 5 / 0.3);
+  }
+  .text-glow-gold {
+    text-shadow: 0 0 18px oklch(0.82 0.13 85 / 0.7), 0 0 36px oklch(0.82 0.13 85 / 0.35);
+  }
+  .glass-card {
+    background: linear-gradient(145deg, oklch(1 0 0 / 0.08), oklch(1 0 0 / 0.02));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(1 0 0 / 0.12);
+    box-shadow: 0 20px 60px -20px oklch(0 0 0 / 0.5), inset 0 1px 0 oklch(1 0 0 / 0.1);
+  }
+
+  @keyframes float-heart {
+    0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-10vh) translateX(40px) rotate(360deg); opacity: 0; }
+  }
+  .animate-float-heart { animation: float-heart linear infinite; }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+  .animate-sparkle { animation: sparkle 2.5s ease-in-out infinite; }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+  }
+  .animate-heartbeat { animation: heartbeat 1.4s ease-in-out infinite; }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, oklch(0.85 0.12 5), oklch(0.82 0.13 85), oklch(0.85 0.12 5));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+
+  @keyframes slow-zoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  .animate-slow-zoom { animation: slow-zoom 12s ease-in-out infinite; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up { animation: fade-up 1s ease-out forwards; }
+
+  .btn-romance {
+    background: linear-gradient(135deg, oklch(0.72 0.18 5), oklch(0.6 0.2 340));
+    color: oklch(0.99 0 0);
+    box-shadow: 0 10px 30px -10px oklch(0.72 0.18 5 / 0.6), inset 0 1px 0 oklch(1 0 0 / 0.3);
+    transition: all 0.3s ease;
+  }
+  .btn-romance:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 20px 50px -15px oklch(0.72 0.18 5 / 0.8), inset 0 1px 0 oklch(1 0 0 / 0.4);
   }
 }
