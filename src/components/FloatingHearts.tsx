@@ -1,9 +1,10 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
 
 export function FloatingHearts({ count = 18 }: { count?: number }) {
-  const hearts = useMemo(
-    () =>
+  const [hearts, setHearts] = useState<Array<{id:number;left:number;size:number;duration:number;delay:number;opacity:number}>>([]);
+  useEffect(() => {
+    setHearts(
       Array.from({ length: count }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
@@ -12,8 +13,8 @@ export function FloatingHearts({ count = 18 }: { count?: number }) {
         delay: Math.random() * 10,
         opacity: 0.3 + Math.random() * 0.5,
       })),
-    [count],
-  );
+    );
+  }, [count]);
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {hearts.map((h) => (
@@ -36,8 +37,9 @@ export function FloatingHearts({ count = 18 }: { count?: number }) {
 }
 
 export function Sparkles({ count = 30 }: { count?: number }) {
-  const sparkles = useMemo(
-    () =>
+  const [sparkles, setSparkles] = useState<Array<{id:number;top:number;left:number;size:number;delay:number}>>([]);
+  useEffect(() => {
+    setSparkles(
       Array.from({ length: count }, (_, i) => ({
         id: i,
         top: Math.random() * 100,
@@ -45,8 +47,8 @@ export function Sparkles({ count = 30 }: { count?: number }) {
         size: 2 + Math.random() * 4,
         delay: Math.random() * 3,
       })),
-    [count],
-  );
+    );
+  }, [count]);
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
       {sparkles.map((s) => (
