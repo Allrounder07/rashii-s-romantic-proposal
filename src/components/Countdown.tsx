@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 
-function getNextBirthday() {
-  // Default: next occurrence of Dec 1 — user can edit this date later
-  const now = new Date();
-  const year = now.getMonth() >= 11 && now.getDate() > 1 ? now.getFullYear() + 1 : now.getFullYear();
-  return new Date(year, 11, 1, 0, 0, 0).getTime();
-}
+// Rashii Ammu's birthday — 27 June 2026
+const BIRTHDAY_TS = new Date(2026, 5, 27, 0, 0, 0).getTime();
 
 export function Countdown() {
-  const [target] = useState(getNextBirthday);
-  const [now, setNow] = useState(Date.now());
+  const [target] = useState(BIRTHDAY_TS);
+  const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
+    setNow(Date.now());
     const i = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(i);
   }, []);
-  const diff = Math.max(0, target - now);
+  const diff = now === null ? 0 : Math.max(0, target - now);
   const days = Math.floor(diff / 86400000);
   const hours = Math.floor((diff / 3600000) % 24);
   const minutes = Math.floor((diff / 60000) % 60);
