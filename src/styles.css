@@ -231,6 +231,12 @@
   }
   .animate-fade-up { animation: fade-up 1s ease-out forwards; }
 
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow { animation: spin-slow 18s linear infinite; }
+
   .btn-romance {
     background: linear-gradient(135deg, oklch(0.72 0.18 5), oklch(0.6 0.2 340));
     color: oklch(0.99 0 0);

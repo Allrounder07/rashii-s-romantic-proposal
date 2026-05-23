@@ -76,13 +76,30 @@ function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
         </div>
-        {/* Giant background heart */}
-        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-          <Heart
-            className="h-[95vmin] w-[95vmin] fill-rose/15 text-rose/30"
-            style={{ filter: "drop-shadow(0 0 80px oklch(0.72 0.18 5 / 0.55))" }}
-            strokeWidth={1}
-          />
+        {/* Side hearts with RN */}
+        <div className="pointer-events-none absolute inset-y-0 left-4 z-0 hidden items-center md:flex">
+          <div className="relative h-32 w-32 animate-spin-slow md:h-40 md:w-40">
+            <Heart
+              className="h-full w-full fill-rose/25 text-rose/60"
+              style={{ filter: "drop-shadow(0 0 24px oklch(0.72 0.18 5 / 0.7))" }}
+              strokeWidth={1.2}
+            />
+            <span className="absolute inset-0 flex items-center justify-center font-script text-3xl text-blush text-glow md:text-4xl">
+              RN
+            </span>
+          </div>
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 right-4 z-0 hidden items-center md:flex">
+          <div className="relative h-32 w-32 animate-spin-slow md:h-40 md:w-40">
+            <Heart
+              className="h-full w-full fill-rose/25 text-rose/60"
+              style={{ filter: "drop-shadow(0 0 24px oklch(0.72 0.18 5 / 0.7))" }}
+              strokeWidth={1.2}
+            />
+            <span className="absolute inset-0 flex items-center justify-center font-script text-3xl text-blush text-glow md:text-4xl">
+              RN
+            </span>
+          </div>
         </div>
         <Sparkles count={40} />
 
