@@ -65,10 +65,10 @@ export function ProposalFinale() {
       {!accepted ? (
         <>
           <p className="font-script text-5xl md:text-7xl text-glow text-gradient-romance">
-            Will You Marry Me?
+            ನನ್ನನ್ನು ಮದುವೆಯಾಗುತ್ತೀಯಾ?
           </p>
           <p className="mt-6 font-serif-display text-lg italic text-blush md:text-xl">
-            My Rashii Ammu… forever begins with your yes. 💍
+            ನನ್ನ ರಶಿ ಅಮ್ಮು… ನಿನ್ನ "ಹೌದು" ಜೊತೆ ನಮ್ಮ ಶಾಶ್ವತತೆ ಆರಂಭವಾಗುತ್ತದೆ. 💍
           </p>
           <div className="relative mt-12 flex items-center justify-center gap-6">
             <button
@@ -76,7 +76,7 @@ export function ProposalFinale() {
               className="btn-romance group rounded-full px-10 py-4 font-display text-2xl"
             >
               <span className="inline-flex items-center gap-2">
-                Yes <Heart className="h-5 w-5 fill-current transition group-hover:animate-heartbeat" />
+                ಹೌದು <Heart className="h-5 w-5 fill-current transition group-hover:animate-heartbeat" />
               </span>
             </button>
             <button
@@ -89,24 +89,24 @@ export function ProposalFinale() {
               }}
               className="glass-card rounded-full px-6 py-3 font-display text-lg text-muted-foreground"
             >
-              No
+              ಇಲ್ಲ
             </button>
           </div>
           <p className="mt-8 text-sm italic text-muted-foreground">
-            (the "no" might be a little shy… 💕)
+            ("ಇಲ್ಲ" ಸ್ವಲ್ಪ ನಾಚಿಕೆಪಡುತ್ತಿರಬಹುದು… 💕)
           </p>
         </>
       ) : (
         <div className="animate-fade-up">
           <SparklesIcon className="mx-auto mb-4 h-10 w-10 text-gold animate-pulse" />
           <p className="font-script text-6xl text-glow-gold animate-shimmer md:text-8xl">
-            She said Yes!
+            ಅವಳು ಹೌದು ಎಂದಳು!
           </p>
           <p className="mt-6 font-serif-display text-xl italic text-blush md:text-2xl">
-            Rashii Ammu <span className="text-rose">❤</span> Nithin — forever &amp; always.
+            ರಶಿ ಅಮ್ಮು <span className="text-rose">❤</span> ನಿಥಿನ್ — ಸದಾಕಾಲ, ಸದಾಕಾಲ.
           </p>
           <p className="mt-3 font-display text-2xl text-gradient-romance md:text-3xl">
-            "Two hearts, one promise."
+            "ಎರಡು ಹೃದಯಗಳು, ಒಂದು ವಚನ."
           </p>
         </div>
       )}
