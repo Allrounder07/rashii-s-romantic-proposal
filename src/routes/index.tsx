@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Heart, Gem, Camera, Calendar, Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import { Heart, Gem, Camera, Calendar, Mail, ChevronLeft, ChevronRight, Crown } from "lucide-react";
 import romanticBg from "@/assets/romantic-bg.jpg";
 import memory1 from "@/assets/memory-1.jpg";
 import memory2 from "@/assets/memory-2.jpg";
@@ -9,7 +9,6 @@ import memory4 from "@/assets/memory-4.jpg";
 import birthdayToys from "@/assets/birthday-toys.png";
 import { FloatingHearts, Sparkles } from "@/components/FloatingHearts";
 import { Countdown } from "@/components/Countdown";
-import { MusicToggle } from "@/components/MusicToggle";
 import { ProposalFinale } from "@/components/ProposalFinale";
 
 export const Route = createFileRoute("/")({
@@ -35,28 +34,37 @@ const quotes = [
   "Mine, always.",
 ];
 
+const quotesKn = [
+  "ಸದಾ ನಿನ್ನವನು.",
+  "ನನ್ನ ಹೃದಯಬಡಿತ.",
+  "ಯಾವಾಗಲೂ ನೀನು.",
+  "ನನ್ನ ಚಂದ್ರಪ್ರಕಾಶ.",
+  "ಅಂತ್ಯವಿಲ್ಲದ ಪ್ರೀತಿ.",
+  "ನನ್ನವಳು, ಸದಾ.",
+];
+
 const memories = [
-  { src: memory1, caption: "Every rose remembers your name." },
-  { src: memory2, caption: "Two hearts, one sky." },
-  { src: memory3, caption: "A promise that sparkles forever." },
-  { src: memory4, caption: "Make a wish, my love." },
+  { src: memory1, caption: "ಪ್ರತಿ ಗುಲಾಬಿಗೂ ನಿನ್ನ ಹೆಸರು ನೆನಪಿದೆ." },
+  { src: memory2, caption: "ಎರಡು ಹೃದಯ, ಒಂದೇ ಆಕಾಶ." },
+  { src: memory3, caption: "ಸದಾ ಹೊಳೆಯುವ ಒಂದು ವಚನ." },
+  { src: memory4, caption: "ಒಂದು ಆಸೆ ಮಾಡು, ನನ್ನ ಪ್ರಿಯೆ." },
 ];
 
 const storyChapters = [
   {
-    title: "The first glance",
+    title: "ಮೊದಲ ನೋಟ",
     text:
-      "From the moment you smiled, my world found its rhythm. Every ordinary day became a love letter waiting to be written.",
+      "ನೀನು ನಗಿದ ಆ ಕ್ಷಣದಿಂದಲೇ, ನನ್ನ ಪ್ರಪಂಚ ತನ್ನ ಲಯವನ್ನು ಕಂಡುಕೊಂಡಿತು. ಪ್ರತಿಯೊಂದು ಸಾಮಾನ್ಯ ದಿನವೂ ಬರೆಯಲು ಕಾಯುತ್ತಿರುವ ಪ್ರೇಮಪತ್ರವಾಯಿತು.",
   },
   {
-    title: "The quiet certainty",
+    title: "ಮೌನ ನಂಬಿಕೆ",
     text:
-      "In your laughter I found home, in your eyes I found tomorrow. You are the prayer I didn't know I was whispering.",
+      "ನಿನ್ನ ನಗುವಿನಲ್ಲಿ ನಾನು ಮನೆಯನ್ನು ಕಂಡೆ, ನಿನ್ನ ಕಣ್ಣುಗಳಲ್ಲಿ ನಾಳೆಯನ್ನು ಕಂಡೆ. ನಾನು ಪಿಸುಗುಡುತ್ತಿರುವ ತಿಳಿಯದ ಪ್ರಾರ್ಥನೆಯೇ ನೀನು.",
   },
   {
-    title: "The forever I choose",
+    title: "ನಾನು ಆರಿಸಿಕೊಂಡ ಶಾಶ್ವತತೆ",
     text:
-      "Today, on your birthday, I am not only celebrating the day you were born — I am celebrating the day my forever began.",
+      "ಇಂದು, ನಿನ್ನ ಹುಟ್ಟುಹಬ್ಬದಂದು, ನಾನು ನೀನು ಹುಟ್ಟಿದ ದಿನವನ್ನು ಮಾತ್ರ ಆಚರಿಸುತ್ತಿಲ್ಲ — ನನ್ನ ಶಾಶ್ವತತೆ ಆರಂಭವಾದ ದಿನವನ್ನು ಸಹ ಆಚರಿಸುತ್ತಿದ್ದೇನೆ.",
   },
 ];
 
@@ -71,7 +79,6 @@ function Index() {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      <MusicToggle />
       <FloatingHearts />
 
       {/* STEP 0 — HERO */}
@@ -115,12 +122,49 @@ function Index() {
           </div>
           <Sparkles count={40} />
 
+          {/* Top-right small static RN heart (replaces music button) */}
+          <div className="pointer-events-none absolute right-4 top-4 z-40 md:right-6 md:top-6">
+            <div className="relative h-14 w-14 md:h-16 md:w-16">
+              <Heart
+                className="h-full w-full fill-rose text-rose"
+                style={{ filter: "drop-shadow(0 0 14px oklch(0.72 0.18 5 / 0.85))" }}
+                strokeWidth={1.2}
+              />
+              <span
+                className="absolute inset-0 flex items-center justify-center font-script text-xl text-glow md:text-2xl"
+                style={{ color: "oklch(0.99 0.02 85)" }}
+              >
+                RN
+              </span>
+            </div>
+          </div>
+
           <div className="relative z-10 mx-auto max-w-4xl animate-fade-up">
             <p className="font-serif-display tracking-[0.5em] text-sm uppercase text-gold text-glow-gold">
               A Birthday Proposal
             </p>
             <h1 className="mt-6 font-script text-6xl leading-tight text-glow md:text-9xl">
-              <span className="text-gradient-romance">Rashii Ammu</span>
+              <span className="text-gradient-romance">
+                <span className="relative inline-block">
+                  <Crown
+                    className="absolute -top-8 left-1/2 h-8 w-8 -translate-x-1/2 -rotate-12 fill-emerald-400 text-emerald-500 md:-top-12 md:h-12 md:w-12"
+                    style={{ filter: "drop-shadow(0 0 16px oklch(0.7 0.18 150 / 0.85))" }}
+                    strokeWidth={1.5}
+                  />
+                  <span
+                    style={{
+                      background:
+                        "linear-gradient(135deg, oklch(0.78 0.18 150), oklch(0.6 0.2 145))",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      filter: "drop-shadow(0 0 18px oklch(0.7 0.18 150 / 0.6))",
+                    }}
+                  >
+                    R
+                  </span>
+                </span>
+                ashii Ammu
+              </span>
             </h1>
             <div className="my-4 flex items-center justify-center gap-4">
               <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold/60" />
