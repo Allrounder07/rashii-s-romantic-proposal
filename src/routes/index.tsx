@@ -365,7 +365,7 @@ function Index() {
                 ಆದ್ದರಿಂದ ನಾನು ಇಂದು ನಿನಗೆ ಕೇವಲ ಒಂದು ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯ ಹೇಳುತ್ತಿಲ್ಲ — ಇನ್ನು ಮುಂದಿನ ಪ್ರತಿಯೊಂದು ಹುಟ್ಟುಹಬ್ಬವನ್ನೂ ನಿನ್ನೊಂದಿಗೆ ಕೇಳುತ್ತಿದ್ದೇನೆ.
               </p>
               <p className="mt-8 text-right font-script text-3xl text-gold text-glow-gold md:text-4xl">
-                — ಸದಾ ನಿನ್ನವನು, ನಿಥಿನ್
+                — Forever yours, Nithin
               </p>
             </div>
           </div>
