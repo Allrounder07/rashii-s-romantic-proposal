@@ -202,26 +202,29 @@ function Index() {
           {/* Birthday toys with banner — bottom of hero */}
           <div className="relative z-10 mt-10 w-full max-w-3xl">
             <div className="relative">
-              <div className="mx-auto mb-[-1.25rem] w-fit md:mb-[-1.5rem]">
+              <div className="mx-auto mb-[-1rem] flex w-[92%] max-w-md justify-center md:mb-[-1.5rem] md:max-w-xl">
                 <div
-                  className="relative rounded-2xl border-2 border-gold/70 px-6 py-2 shadow-2xl md:px-10 md:py-3"
+                  className="relative w-full rounded-2xl border-2 border-gold/70 px-4 py-2.5 text-center shadow-2xl sm:px-6 md:px-10 md:py-4"
                   style={{
                     background:
                       "linear-gradient(135deg, oklch(0.72 0.18 5 / 0.95), oklch(0.85 0.1 15 / 0.95))",
-                    boxShadow: "0 10px 40px -10px oklch(0.72 0.18 5 / 0.8)",
+                    boxShadow:
+                      "0 10px 40px -10px oklch(0.72 0.18 5 / 0.8), 0 0 60px -10px oklch(0.82 0.13 85 / 0.5)",
                   }}
                 >
                   <span
-                    className="font-script text-2xl md:text-4xl"
+                    className="block whitespace-nowrap font-script leading-tight tracking-wide"
                     style={{
+                      fontSize: "clamp(1.35rem, 6vw, 2.75rem)",
                       color: "oklch(0.99 0.02 85)",
-                      textShadow: "0 2px 12px oklch(0.4 0.1 5 / 0.6)",
+                      textShadow:
+                        "0 2px 12px oklch(0.4 0.1 5 / 0.6), 0 0 22px oklch(0.99 0.02 85 / 0.55)",
                     }}
                   >
                     Yippee Birthday Ammu
                   </span>
-                  <Heart className="absolute -left-3 -top-3 h-6 w-6 animate-heartbeat fill-rose text-rose" />
-                  <Heart className="absolute -right-3 -top-3 h-6 w-6 animate-heartbeat fill-rose text-rose" />
+                  <Heart className="absolute -left-3 -top-3 h-5 w-5 animate-heartbeat fill-rose text-rose md:h-6 md:w-6" />
+                  <Heart className="absolute -right-3 -top-3 h-5 w-5 animate-heartbeat fill-rose text-rose md:h-6 md:w-6" />
                 </div>
               </div>
               <img
