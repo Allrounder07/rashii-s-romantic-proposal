@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Heart, Gem, Camera, Calendar, Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import { Heart, Gem, Camera, Calendar, Mail, ChevronLeft, ChevronRight, Crown } from "lucide-react";
 import romanticBg from "@/assets/romantic-bg.jpg";
 import memory1 from "@/assets/memory-1.jpg";
 import memory2 from "@/assets/memory-2.jpg";
@@ -9,7 +9,6 @@ import memory4 from "@/assets/memory-4.jpg";
 import birthdayToys from "@/assets/birthday-toys.png";
 import { FloatingHearts, Sparkles } from "@/components/FloatingHearts";
 import { Countdown } from "@/components/Countdown";
-import { MusicToggle } from "@/components/MusicToggle";
 import { ProposalFinale } from "@/components/ProposalFinale";
 
 export const Route = createFileRoute("/")({
@@ -35,28 +34,37 @@ const quotes = [
   "Mine, always.",
 ];
 
+const quotesKn = [
+  "ಸದಾ ನಿನ್ನವನು.",
+  "ನನ್ನ ಹೃದಯಬಡಿತ.",
+  "ಯಾವಾಗಲೂ ನೀನು.",
+  "ನನ್ನ ಚಂದ್ರಪ್ರಕಾಶ.",
+  "ಅಂತ್ಯವಿಲ್ಲದ ಪ್ರೀತಿ.",
+  "ನನ್ನವಳು, ಸದಾ.",
+];
+
 const memories = [
-  { src: memory1, caption: "Every rose remembers your name." },
-  { src: memory2, caption: "Two hearts, one sky." },
-  { src: memory3, caption: "A promise that sparkles forever." },
-  { src: memory4, caption: "Make a wish, my love." },
+  { src: memory1, caption: "ಪ್ರತಿ ಗುಲಾಬಿಗೂ ನಿನ್ನ ಹೆಸರು ನೆನಪಿದೆ." },
+  { src: memory2, caption: "ಎರಡು ಹೃದಯ, ಒಂದೇ ಆಕಾಶ." },
+  { src: memory3, caption: "ಸದಾ ಹೊಳೆಯುವ ಒಂದು ವಚನ." },
+  { src: memory4, caption: "ಒಂದು ಆಸೆ ಮಾಡು, ನನ್ನ ಪ್ರಿಯೆ." },
 ];
 
 const storyChapters = [
   {
-    title: "The first glance",
+    title: "ಮೊದಲ ನೋಟ",
     text:
-      "From the moment you smiled, my world found its rhythm. Every ordinary day became a love letter waiting to be written.",
+      "ನೀನು ನಗಿದ ಆ ಕ್ಷಣದಿಂದಲೇ, ನನ್ನ ಪ್ರಪಂಚ ತನ್ನ ಲಯವನ್ನು ಕಂಡುಕೊಂಡಿತು. ಪ್ರತಿಯೊಂದು ಸಾಮಾನ್ಯ ದಿನವೂ ಬರೆಯಲು ಕಾಯುತ್ತಿರುವ ಪ್ರೇಮಪತ್ರವಾಯಿತು.",
   },
   {
-    title: "The quiet certainty",
+    title: "ಮೌನ ನಂಬಿಕೆ",
     text:
-      "In your laughter I found home, in your eyes I found tomorrow. You are the prayer I didn't know I was whispering.",
+      "ನಿನ್ನ ನಗುವಿನಲ್ಲಿ ನಾನು ಮನೆಯನ್ನು ಕಂಡೆ, ನಿನ್ನ ಕಣ್ಣುಗಳಲ್ಲಿ ನಾಳೆಯನ್ನು ಕಂಡೆ. ನಾನು ಪಿಸುಗುಡುತ್ತಿರುವ ತಿಳಿಯದ ಪ್ರಾರ್ಥನೆಯೇ ನೀನು.",
   },
   {
-    title: "The forever I choose",
+    title: "ನಾನು ಆರಿಸಿಕೊಂಡ ಶಾಶ್ವತತೆ",
     text:
-      "Today, on your birthday, I am not only celebrating the day you were born — I am celebrating the day my forever began.",
+      "ಇಂದು, ನಿನ್ನ ಹುಟ್ಟುಹಬ್ಬದಂದು, ನಾನು ನೀನು ಹುಟ್ಟಿದ ದಿನವನ್ನು ಮಾತ್ರ ಆಚರಿಸುತ್ತಿಲ್ಲ — ನನ್ನ ಶಾಶ್ವತತೆ ಆರಂಭವಾದ ದಿನವನ್ನು ಸಹ ಆಚರಿಸುತ್ತಿದ್ದೇನೆ.",
   },
 ];
 
@@ -71,7 +79,6 @@ function Index() {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      <MusicToggle />
       <FloatingHearts />
 
       {/* STEP 0 — HERO */}
@@ -115,12 +122,49 @@ function Index() {
           </div>
           <Sparkles count={40} />
 
+          {/* Top-right small static RN heart (replaces music button) */}
+          <div className="pointer-events-none absolute right-4 top-4 z-40 md:right-6 md:top-6">
+            <div className="relative h-14 w-14 md:h-16 md:w-16">
+              <Heart
+                className="h-full w-full fill-rose text-rose"
+                style={{ filter: "drop-shadow(0 0 14px oklch(0.72 0.18 5 / 0.85))" }}
+                strokeWidth={1.2}
+              />
+              <span
+                className="absolute inset-0 flex items-center justify-center font-script text-xl text-glow md:text-2xl"
+                style={{ color: "oklch(0.99 0.02 85)" }}
+              >
+                RN
+              </span>
+            </div>
+          </div>
+
           <div className="relative z-10 mx-auto max-w-4xl animate-fade-up">
             <p className="font-serif-display tracking-[0.5em] text-sm uppercase text-gold text-glow-gold">
               A Birthday Proposal
             </p>
             <h1 className="mt-6 font-script text-6xl leading-tight text-glow md:text-9xl">
-              <span className="text-gradient-romance">Rashii Ammu</span>
+              <span className="text-gradient-romance">
+                <span className="relative inline-block">
+                  <Crown
+                    className="absolute -top-8 left-1/2 h-8 w-8 -translate-x-1/2 -rotate-12 fill-emerald-400 text-emerald-500 md:-top-12 md:h-12 md:w-12"
+                    style={{ filter: "drop-shadow(0 0 16px oklch(0.7 0.18 150 / 0.85))" }}
+                    strokeWidth={1.5}
+                  />
+                  <span
+                    style={{
+                      background:
+                        "linear-gradient(135deg, oklch(0.78 0.18 150), oklch(0.6 0.2 145))",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      filter: "drop-shadow(0 0 18px oklch(0.7 0.18 150 / 0.6))",
+                    }}
+                  >
+                    R
+                  </span>
+                </span>
+                ashii Ammu
+              </span>
             </h1>
             <div className="my-4 flex items-center justify-center gap-4">
               <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold/60" />
@@ -198,10 +242,10 @@ function Index() {
           <div className="mx-auto max-w-3xl text-center">
             <Calendar className="mx-auto mb-4 h-8 w-8 text-gold" />
             <h3 className="font-script text-5xl text-gradient-romance md:text-6xl">
-              Counting every heartbeat
+              ಪ್ರತಿ ಹೃದಯಬಡಿತವನ್ನು ಎಣಿಸುತ್ತಿದ್ದೇನೆ
             </h3>
             <p className="mt-3 font-serif-display italic text-muted-foreground">
-              Until I see you smile again…
+              ನಿನ್ನ ನಗುವನ್ನು ಮತ್ತೆ ಕಾಣುವವರೆಗೆ…
             </p>
             <div className="mt-10">
               <Countdown />
@@ -216,10 +260,10 @@ function Index() {
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
               <p className="font-serif-display tracking-[0.4em] text-xs uppercase text-gold">
-                Our Story
+                ನಮ್ಮ ಕಥೆ
               </p>
               <h3 className="mt-3 font-script text-5xl text-gradient-romance md:text-7xl">
-                How my heart learned your name
+                ನನ್ನ ಹೃದಯ ನಿನ್ನ ಹೆಸರನ್ನು ಹೇಗೆ ಕಲಿಯಿತು
               </h3>
             </div>
             <div className="space-y-8">
@@ -251,10 +295,10 @@ function Index() {
             <div className="mb-12 text-center">
               <Camera className="mx-auto mb-3 h-7 w-7 text-gold" />
               <h3 className="font-script text-5xl text-gradient-romance md:text-6xl">
-                Memories I keep
+                ನಾನು ಕಾಪಾಡಿಕೊಂಡ ನೆನಪುಗಳು
               </h3>
               <p className="mt-3 font-serif-display italic text-muted-foreground">
-                Every frame, a heartbeat saved.
+                ಪ್ರತಿ ಚಿತ್ರವೂ, ಒಂದು ಹೃದಯಬಡಿತ.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
@@ -288,10 +332,10 @@ function Index() {
         <section className="relative min-h-screen px-6 py-20">
           <div className="mx-auto max-w-5xl">
             <h3 className="mb-10 text-center font-script text-4xl text-gradient-romance md:text-5xl">
-              Little whispers
+              ಪುಟ್ಟ ಪಿಸುಮಾತುಗಳು
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              {quotes.map((q) => (
+              {quotesKn.map((q) => (
                 <span
                   key={q}
                   className="glass-card rounded-full px-6 py-3 font-display text-lg text-blush transition hover:scale-105 md:text-xl"
@@ -305,27 +349,23 @@ function Index() {
           <div className="mx-auto mt-16 max-w-3xl text-center">
             <Mail className="mx-auto mb-4 h-8 w-8 text-gold" />
             <h3 className="font-script text-5xl text-gradient-romance md:text-7xl">
-              A letter, just for you
+              ನಿನಗಾಗಿಯೇ ಒಂದು ಪತ್ರ
             </h3>
             <div className="glass-card mt-10 rounded-3xl p-8 text-left md:p-12">
               <p className="font-serif-display text-lg italic leading-relaxed text-foreground/90 md:text-xl">
-                My dearest Rashii Ammu,
+                ನನ್ನ ಪ್ರೀತಿಯ ರಶಿ ಅಮ್ಮು,
                 <br />
                 <br />
-                If love had a face, it would wear your smile. If it had a sound, it would be your
-                laughter. I have spent so many nights writing this letter inside my heart — and
-                today, on your birthday, I finally have the courage to say it out loud.
+                ಪ್ರೀತಿಗೆ ಮುಖವಿದ್ದರೆ, ಅದು ನಿನ್ನ ನಗುವನ್ನು ಧರಿಸಿರುತ್ತಿತ್ತು. ಶಬ್ದವಿದ್ದರೆ, ಅದು ನಿನ್ನ ನಗುವಿನ ಧ್ವನಿಯಾಗಿರುತ್ತಿತ್ತು. ಎಷ್ಟೋ ರಾತ್ರಿಗಳು ಈ ಪತ್ರವನ್ನು ನಾನು ನನ್ನ ಹೃದಯದೊಳಗೆ ಬರೆದಿದ್ದೇನೆ — ಮತ್ತು ಇಂದು, ನಿನ್ನ ಹುಟ್ಟುಹಬ್ಬದಂದು, ಅದನ್ನು ಗಟ್ಟಿಯಾಗಿ ಹೇಳುವ ಧೈರ್ಯ ನನಗೆ ಕೊನೆಗೂ ಬಂದಿದೆ.
                 <br />
                 <br />
-                You are my favorite reason. My quiet miracle. The one I want to grow old beside.
-                Every dream I dream has your name written in the corner.
+                ನೀನು ನನ್ನ ಅತ್ಯಂತ ಪ್ರಿಯ ಕಾರಣ. ನನ್ನ ಮೌನ ಅದ್ಭುತ. ನಾನು ಜೊತೆಗೆ ವೃದ್ಧಾಪ್ಯ ಕಳೆಯಲು ಬಯಸುವವಳು ನೀನೇ. ನಾನು ಕಾಣುವ ಪ್ರತಿ ಕನಸಿನ ಮೂಲೆಯಲ್ಲೂ ನಿನ್ನ ಹೆಸರು ಬರೆಯಲ್ಪಟ್ಟಿದೆ.
                 <br />
                 <br />
-                So I'm not just wishing you a happy birthday today — I'm asking for every birthday
-                after this one, too.
+                ಆದ್ದರಿಂದ ನಾನು ಇಂದು ನಿನಗೆ ಕೇವಲ ಒಂದು ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯ ಹೇಳುತ್ತಿಲ್ಲ — ಇನ್ನು ಮುಂದಿನ ಪ್ರತಿಯೊಂದು ಹುಟ್ಟುಹಬ್ಬವನ್ನೂ ನಿನ್ನೊಂದಿಗೆ ಕೇಳುತ್ತಿದ್ದೇನೆ.
               </p>
               <p className="mt-8 text-right font-script text-3xl text-gold text-glow-gold md:text-4xl">
-                — forever yours, Nithin
+                — ಸದಾ ನಿನ್ನವನು, ನಿಥಿನ್
               </p>
             </div>
           </div>
@@ -357,7 +397,7 @@ function Index() {
             onClick={() => go(step - 1)}
             className="glass-card flex items-center gap-2 rounded-full px-5 py-2 font-display text-sm text-blush transition hover:scale-105"
           >
-            <ChevronLeft className="h-4 w-4" /> Back
+            <ChevronLeft className="h-4 w-4" /> ಹಿಂದೆ
           </button>
           <div className="flex items-center gap-1.5">
             {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
@@ -374,14 +414,14 @@ function Index() {
               onClick={() => go(step + 1)}
               className="btn-romance flex items-center gap-2 rounded-full px-5 py-2 font-display text-sm"
             >
-              Next <ChevronRight className="h-4 w-4" />
+              ಮುಂದೆ <ChevronRight className="h-4 w-4" />
             </button>
           ) : (
             <button
               onClick={() => go(0)}
               className="glass-card flex items-center gap-2 rounded-full px-5 py-2 font-display text-sm text-blush"
             >
-              <Heart className="h-4 w-4 fill-rose text-rose" /> Start
+              <Heart className="h-4 w-4 fill-rose text-rose" /> ಮೊದಲಿಗೆ
             </button>
           )}
         </div>

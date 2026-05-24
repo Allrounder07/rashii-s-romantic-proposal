@@ -18,10 +18,10 @@ export function Countdown() {
   const seconds = Math.floor((diff / 1000) % 60);
 
   const items = [
-    { label: "Days", value: days },
-    { label: "Hours", value: hours },
-    { label: "Minutes", value: minutes },
-    { label: "Seconds", value: seconds },
+    { label: "ದಿನಗಳು", value: days },
+    { label: "ಗಂಟೆಗಳು", value: hours },
+    { label: "ನಿಮಿಷಗಳು", value: minutes },
+    { label: "ಸೆಕೆಂಡುಗಳು", value: seconds },
   ];
 
   return (
