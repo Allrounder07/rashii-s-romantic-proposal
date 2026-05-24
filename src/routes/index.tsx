@@ -242,10 +242,10 @@ function Index() {
           <div className="mx-auto max-w-3xl text-center">
             <Calendar className="mx-auto mb-4 h-8 w-8 text-gold" />
             <h3 className="font-script text-5xl text-gradient-romance md:text-6xl">
-              Counting every heartbeat
+              ಪ್ರತಿ ಹೃದಯಬಡಿತವನ್ನು ಎಣಿಸುತ್ತಿದ್ದೇನೆ
             </h3>
             <p className="mt-3 font-serif-display italic text-muted-foreground">
-              Until I see you smile again…
+              ನಿನ್ನ ನಗುವನ್ನು ಮತ್ತೆ ಕಾಣುವವರೆಗೆ…
             </p>
             <div className="mt-10">
               <Countdown />
@@ -260,10 +260,10 @@ function Index() {
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
               <p className="font-serif-display tracking-[0.4em] text-xs uppercase text-gold">
-                Our Story
+                ನಮ್ಮ ಕಥೆ
               </p>
               <h3 className="mt-3 font-script text-5xl text-gradient-romance md:text-7xl">
-                How my heart learned your name
+                ನನ್ನ ಹೃದಯ ನಿನ್ನ ಹೆಸರನ್ನು ಹೇಗೆ ಕಲಿಯಿತು
               </h3>
             </div>
             <div className="space-y-8">
@@ -295,10 +295,10 @@ function Index() {
             <div className="mb-12 text-center">
               <Camera className="mx-auto mb-3 h-7 w-7 text-gold" />
               <h3 className="font-script text-5xl text-gradient-romance md:text-6xl">
-                Memories I keep
+                ನಾನು ಕಾಪಾಡಿಕೊಂಡ ನೆನಪುಗಳು
               </h3>
               <p className="mt-3 font-serif-display italic text-muted-foreground">
-                Every frame, a heartbeat saved.
+                ಪ್ರತಿ ಚಿತ್ರವೂ, ಒಂದು ಹೃದಯಬಡಿತ.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
@@ -332,10 +332,10 @@ function Index() {
         <section className="relative min-h-screen px-6 py-20">
           <div className="mx-auto max-w-5xl">
             <h3 className="mb-10 text-center font-script text-4xl text-gradient-romance md:text-5xl">
-              Little whispers
+              ಪುಟ್ಟ ಪಿಸುಮಾತುಗಳು
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              {quotes.map((q) => (
+              {quotesKn.map((q) => (
                 <span
                   key={q}
                   className="glass-card rounded-full px-6 py-3 font-display text-lg text-blush transition hover:scale-105 md:text-xl"
@@ -349,27 +349,23 @@ function Index() {
           <div className="mx-auto mt-16 max-w-3xl text-center">
             <Mail className="mx-auto mb-4 h-8 w-8 text-gold" />
             <h3 className="font-script text-5xl text-gradient-romance md:text-7xl">
-              A letter, just for you
+              ನಿನಗಾಗಿಯೇ ಒಂದು ಪತ್ರ
             </h3>
             <div className="glass-card mt-10 rounded-3xl p-8 text-left md:p-12">
               <p className="font-serif-display text-lg italic leading-relaxed text-foreground/90 md:text-xl">
-                My dearest Rashii Ammu,
+                ನನ್ನ ಪ್ರೀತಿಯ ರಶಿ ಅಮ್ಮು,
                 <br />
                 <br />
-                If love had a face, it would wear your smile. If it had a sound, it would be your
-                laughter. I have spent so many nights writing this letter inside my heart — and
-                today, on your birthday, I finally have the courage to say it out loud.
+                ಪ್ರೀತಿಗೆ ಮುಖವಿದ್ದರೆ, ಅದು ನಿನ್ನ ನಗುವನ್ನು ಧರಿಸಿರುತ್ತಿತ್ತು. ಶಬ್ದವಿದ್ದರೆ, ಅದು ನಿನ್ನ ನಗುವಿನ ಧ್ವನಿಯಾಗಿರುತ್ತಿತ್ತು. ಎಷ್ಟೋ ರಾತ್ರಿಗಳು ಈ ಪತ್ರವನ್ನು ನಾನು ನನ್ನ ಹೃದಯದೊಳಗೆ ಬರೆದಿದ್ದೇನೆ — ಮತ್ತು ಇಂದು, ನಿನ್ನ ಹುಟ್ಟುಹಬ್ಬದಂದು, ಅದನ್ನು ಗಟ್ಟಿಯಾಗಿ ಹೇಳುವ ಧೈರ್ಯ ನನಗೆ ಕೊನೆಗೂ ಬಂದಿದೆ.
                 <br />
                 <br />
-                You are my favorite reason. My quiet miracle. The one I want to grow old beside.
-                Every dream I dream has your name written in the corner.
+                ನೀನು ನನ್ನ ಅತ್ಯಂತ ಪ್ರಿಯ ಕಾರಣ. ನನ್ನ ಮೌನ ಅದ್ಭುತ. ನಾನು ಜೊತೆಗೆ ವೃದ್ಧಾಪ್ಯ ಕಳೆಯಲು ಬಯಸುವವಳು ನೀನೇ. ನಾನು ಕಾಣುವ ಪ್ರತಿ ಕನಸಿನ ಮೂಲೆಯಲ್ಲೂ ನಿನ್ನ ಹೆಸರು ಬರೆಯಲ್ಪಟ್ಟಿದೆ.
                 <br />
                 <br />
-                So I'm not just wishing you a happy birthday today — I'm asking for every birthday
-                after this one, too.
+                ಆದ್ದರಿಂದ ನಾನು ಇಂದು ನಿನಗೆ ಕೇವಲ ಒಂದು ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯ ಹೇಳುತ್ತಿಲ್ಲ — ಇನ್ನು ಮುಂದಿನ ಪ್ರತಿಯೊಂದು ಹುಟ್ಟುಹಬ್ಬವನ್ನೂ ನಿನ್ನೊಂದಿಗೆ ಕೇಳುತ್ತಿದ್ದೇನೆ.
               </p>
               <p className="mt-8 text-right font-script text-3xl text-gold text-glow-gold md:text-4xl">
-                — forever yours, Nithin
+                — ಸದಾ ನಿನ್ನವನು, ನಿಥಿನ್
               </p>
             </div>
           </div>
@@ -401,7 +397,7 @@ function Index() {
             onClick={() => go(step - 1)}
             className="glass-card flex items-center gap-2 rounded-full px-5 py-2 font-display text-sm text-blush transition hover:scale-105"
           >
-            <ChevronLeft className="h-4 w-4" /> Back
+            <ChevronLeft className="h-4 w-4" /> ಹಿಂದೆ
           </button>
           <div className="flex items-center gap-1.5">
             {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
@@ -418,14 +414,14 @@ function Index() {
               onClick={() => go(step + 1)}
               className="btn-romance flex items-center gap-2 rounded-full px-5 py-2 font-display text-sm"
             >
-              Next <ChevronRight className="h-4 w-4" />
+              ಮುಂದೆ <ChevronRight className="h-4 w-4" />
             </button>
           ) : (
             <button
               onClick={() => go(0)}
               className="glass-card flex items-center gap-2 rounded-full px-5 py-2 font-display text-sm text-blush"
             >
-              <Heart className="h-4 w-4 fill-rose text-rose" /> Start
+              <Heart className="h-4 w-4 fill-rose text-rose" /> ಮೊದಲಿಗೆ
             </button>
           )}
         </div>
